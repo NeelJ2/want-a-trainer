@@ -5,59 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
+    <title>Wellness for Life Training Request Form</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: #1E90FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color:rgb(0, 0, 0);
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color:rgb(0, 0, 0);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            margin-top: 5px;
+            padding: 10px;
+            border: 1px solid #D3D3D3;
+            border-radius: 5px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #1E90FF;
+            outline: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #104E8B;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #082d5a;
+        }
+    </style>
 </head>
 
 <body>
-    <main>
+    <div class="card">
+        <h1>Wellness for Life</h1>
+        <h2>Training Form</h2>
         <form>
-            <form>
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" required><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" required> <br>
-                <label for="email">E-Mail:</label> <br>
-                <input type="email" id="email" pattern=".+@example\.com" size="30" required />  <br>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required>
 
-                <label for="goals">What are your fitness goals? </label> <br>
-                <select name="fitness-goals" id = "fit" onchange ="showTextBox()">
-                    <option value="lose-weight">Lose Weight</option>
-                    <option value="build-muscle">Build Muscle</option>
-                    <option value="increase-endurance">Increase Endurance</option>
-                    <option value="improve-flexibility">Improve Flexibility</option>
-                    <option value="boost-energy">Boost Energy Levels</option>
-                    <option value="enhance-athletic-performance">Enhance Athletic Performance</option>
-                    <option value="increase-strength">Increase Strength</option>
-                    <option value="reduce-stress">Reduce Stress</option>
-                    <option value="improve-balance">Improve Balance & Coordination</option>
-                    <option value="train-for-event">Train for a Specific Event (e.g., Marathon, Triathlon)</option>
-                    <option value="improve-cardiovascular-health">Improve Cardiovascular Health</option>
-                    <option value="gain-weight">Gain Healthy Weight</option>
-                    <option value="rehabilitate-injury">Rehabilitate an Injury</option>
-                    <option value="increase-mobility">Increase Mobility</option>
-                    <option value="enhance-posture">Enhance Posture</option>
-                    <option value="general-fitness">General Fitness & Well-being</option>
-                    <option value="other">Other</option>
-                    <input type="text" id="myTextBox" style="display: none;" placeholder="Enter text here">
-                </select>
-            </form>
-            <button type="submit" id="submit"> Submit </button>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required>
+
+            <label for="pn">Phone Number:</label>
+            <input type="tel" id="pn" name="pn" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="reason">Reason for Training:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
         </form>
-
-        
-    </main>
-    <script>
-        function showTextBox() {
-          var selectBox = document.getElementById("fit");
-          var textBox = document.getElementById("myTextBox");
-          if (selectBox.value === "other") {
-            textBox.style.display = "block";
-          } else {
-            textBox.style.display = "none";
-          }
-        }
-        </script></body>
+    </div>
+</body>
 
 </html>
